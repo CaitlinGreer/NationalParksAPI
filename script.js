@@ -16,10 +16,9 @@ function displayResults(responseJson){
 //iterate through results array
 for (let i = 0; i < responseJson.data.length; i++){
   $('.js-results-list').append(
-    `<li><h3>${responseJson.data[i].fullName}</h3>
+    `<li><h3><a href ="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
     <p>${responseJson.data[i].description}</p>
-    <p>${responseJson.data[i].addresses}</p>
-    <a href ="${responseJson.data[i].url}"</a></li>`
+    </li>`
   )};
 
 
@@ -35,7 +34,7 @@ function getStateParks(searchTerm, maxResults) {
     limit: maxResults
   };
   const queryString = formatQueryParams(params);
-  const url = searchUrl + '?' + queryString;
+  const url = searchUrl + '?' + 'api_' + queryString;
   console.log(url);
 
 fetch(url)
