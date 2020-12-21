@@ -1,3 +1,11 @@
 .hidden{
     display:none;
 }
+
+.js-error-message {
+  color: red;
+}
+
+.address-info{
+  margin-bottom: -15px;
+}
